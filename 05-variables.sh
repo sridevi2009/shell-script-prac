@@ -1,6 +1,6 @@
 #!/bin/bash
 
-Username=$1
-Password=$2
-
-echo "Username: ${Username}, Password is: ${Password}"
+echo "Please enter your username:"
+read USERNAME
+echo "Username: ${Username}"
+# echo "Username: $Username, Password is: $Password" u can use both with braces pr without brackets
