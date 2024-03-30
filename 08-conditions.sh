@@ -17,7 +17,7 @@
 
 
 Number=$1
-if ( $Number -gt 100 ) {
+if ($Number -gt 100) {
     print "given $Number is greater than 100"
 }
 else {
