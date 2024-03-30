@@ -41,6 +41,7 @@ G="\e[32m"
 N="\e[0m"
 echo "script name: $0"
 LogFile="/tmp/$0-$TimeStamp.log"
+echo "Script stareted executing at $TimeStamp" $>> $LogFile
 
 VALIDATE(){
     if [ $1 -ne 0 ]
