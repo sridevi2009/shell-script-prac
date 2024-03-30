@@ -13,13 +13,17 @@
 #     show what is the error 
 
 # if root user "id" will be always "0"
-
+# exit status= previous command success or not
+# $? --if success, it shows "0", if failure not "0"
+# echo $?
+ 
 ID=$(id -u)
 if [ $ID -ne 0 ]
 then 
-    echo " ERROR:please run this script with root access"
+    echo "ERROR:please run this script with root access"
+    exit 1 #you can give other than zero
 else
     echo "you are root user"
-fi 
+fi # fi means reverse of if indicating condition end
 
 yum install mysql -y 
