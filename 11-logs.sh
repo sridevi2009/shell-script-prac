@@ -18,6 +18,12 @@
 # cat temp.log
 #script-name-<date>.log
 #$0 --script name
+# $1--- first argument
+# $2--second argument
+# $N--nth argument
+# $@--all arguments
+# $#--what arguments
+# $? exit status
 
 
 #!/bin/bash
