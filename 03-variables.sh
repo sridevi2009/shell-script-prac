@@ -2,4 +2,4 @@
 
 Date=$(date)
 
-echo "Script Started Executin Time: ${Date}"
+echo "Script Started Execution Time: ${Date}"
