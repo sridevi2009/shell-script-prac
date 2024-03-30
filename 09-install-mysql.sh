@@ -17,7 +17,7 @@
 ID=$(id -u)
 if [ $ID -ne 0 ]
 then 
-    echo "please run this script with root access"
+    echo " ERROR:please run this script with root access"
 else
     echo "you are root user"
 fi 
