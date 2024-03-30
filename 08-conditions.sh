@@ -17,9 +17,10 @@
 
 
 Number=$1
-if ($Number -gt 100) {
+if [$Number -gt 100]
+then 
     echo "given $Number is greater than 100"
-}
-else {
+
+else 
     echo "given $Number is less than 100"
-} 
+fi 
