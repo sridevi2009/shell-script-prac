@@ -18,8 +18,8 @@
 
 Number=$1
 if ($Number -gt 100) {
-    print "given $Number is greater than 100"
+    echo "given $Number is greater than 100"
 }
 else {
-    print "given $Number is less than 100"
+    echo "given $Number is less than 100"
 } 
