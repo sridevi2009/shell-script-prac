@@ -22,13 +22,19 @@
 # $2--second argument
 # $N--nth argument
 # $@--all arguments
-# $#--what arguments
+# $#--how many arguments
 # $? exit status
+# date +%F --to get correct format of date
+# date +%F-%H --with hours
+# date +%F-%H-%M --with minutes
+# date +%F-%H-%M-%S--with seconds
 
 
 #!/bin/bash
 ID=$(id -u)
-echo "script name: $0" 
+TimeStamp=$(date +%F-%H-%M-%S)
+echo "script name: $0"
+LogFile="/tmp/$0-$TimeStamp.log"
 
 VALIDATE(){
     if [ $1 -ne 0 ]
@@ -47,11 +53,11 @@ else
     echo "you are root user"
 fi # fi means reverse of if indicating condition end
 
-yum install mysql -y
+yum install mysql -y &>> $LogFile
 
 VALIDATE $? "installing mysql"
 
-yum install git -y
+yum install git -y &>> $LogFile
 
 VALIDATE $? "installing git"
 
