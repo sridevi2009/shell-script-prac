@@ -34,4 +34,14 @@ then
     exit 1
 else
     echo "Installing Mysql is sucess"
-fi        
+fi
+
+yum install git -y
+
+if [ $? -ne "0" ]
+then    
+    echo "installing Git is failed"
+    exit 1
+else
+    echo "Installing Git is sucess"
+fi    
