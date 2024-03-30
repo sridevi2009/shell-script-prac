@@ -28,26 +28,32 @@
 # date +%F-%H --with hours
 # date +%F-%H-%M --with minutes
 # date +%F-%H-%M-%S--with seconds
-
+# RED --\e[31m
+# GREEN--\e[32m
+# YELLOW--\e[33m
+# NORMAL--\e[0m
 
 #!/bin/bash
 ID=$(id -u)
 TimeStamp=$(date +%F-%H-%M-%S)
+R="\e[31m"
+G="\e[32m"
+N="\e[0m"
 echo "script name: $0"
 LogFile="/tmp/$0-$TimeStamp.log"
 
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
-        echo "$2 ... failed"
+        echo -e "ERROR: $2 ...$R failed $N"
         exit 1
     else
-        echo "$2 ... is sucess"
+        echo -e "$2 ...$G sucess $N"
     fi
 }
 if [ $ID -ne 0 ]
 then 
-    echo "ERROR:please run this script with root access"
+    echo -e "$R ERROR:please run this script with root access $N"
     exit 1 #you can give other than zero
 else
     echo "you are root user"
