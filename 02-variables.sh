@@ -1,5 +1,5 @@
 #!/bin/bash
-Date: $(date)
+Date=$(date)
 Person1=Ram
 Person2=Rahim
 echo "Script Execution Time is: ${Date}"
