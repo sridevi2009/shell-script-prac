@@ -1,4 +1,5 @@
 #!/bin/bash
+Date: $(date)
 Person1=Ram
 Person2=Rahim
 echo "$Person1: Hello $Person2, good morning"
