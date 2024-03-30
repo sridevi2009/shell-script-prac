@@ -7,5 +7,6 @@ echo "third value is: ${Fruits[2]}"
 
 # value start from 0,1,2
 # not from 1,2,3
+# @ includes the value all
 
-echo "all fruits list is: $Fruits"
+echo "all fruits list is: ${Fruits[@]}"
