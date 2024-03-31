@@ -21,7 +21,7 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
-TimeStamp= $(date +%F-%H-%M-%S)
+TimeStamp=$(date +%F-%H-%M-%S)
 LogFile="/tmp/$0-$TimeStamp.log"
 
 echo "Script Stareted Executing at $TimeStamp" &>> $LogFile
