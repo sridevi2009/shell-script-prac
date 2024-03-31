@@ -53,5 +53,6 @@ do
         yum install $package -y  &> $LogFile
         Validate $? "Installation of $package"
     else
-        echo -e "$Y $package: skipping ,already installed $N"    
+        echo -e "$Y $package: skipping ,already installed $N"
+    fi        
 done            
