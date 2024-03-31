@@ -32,7 +32,7 @@ Validate() {
         echo -e "$2 .. $R Filed $N"
     else
         echo -e "$2 ..$G Success $N"
-fi        
+    fi        
 }
 
 if [ $ID -ne 0 ]
