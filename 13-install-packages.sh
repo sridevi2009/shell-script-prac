@@ -10,7 +10,10 @@
 #         if not installed, install it
 #         validate it
 #     if not root user
-#         throw the error   
+#         throw the error
+
+# yum list installed
+# yum list installed git
 
 #!/bin/bash
 ID=$(id -u)
@@ -18,6 +21,19 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
+TimeStamp= $(date +%F-%H-%M-%S)
+LogFile="/tmp/$0-$TimeStamp.log"
+
+echo "Script Stareted Executing at $TimeStamp" &>> $LogFile
+
+Validate() {
+    if [ $1 -ne 0 ]
+    then
+        echo -e "$2 .. $R Filed $N"
+    else
+        echo -e "$2 ..$G Success $N"
+fi        
+}
 
 if [ $ID -ne 0 ]
 then
@@ -27,4 +43,15 @@ else
     echo "you are root user"
 fi
 
-echo "All arguments passed: $@"       
+# echo "All arguments passed: $@"
+
+for package in $@
+do
+    yum list installed $package  &>> $LogFile
+    if [ $? -ne 0 ]
+    then
+        yum install $package -y  &> $LogFile
+        Validate $? "Installation of $package"
+    else
+        echo -e "$Y $package: skipping ,already installed $N"    
+done            
