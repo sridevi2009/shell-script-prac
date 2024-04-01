@@ -22,7 +22,7 @@
 # find . -type f -mtime +14 -name "*.log"
 
 #!/bin/bash
-SOURCE_DIR="/tmp/shellscript.logs"
+SOURCE_DIR="/tmp/shellscript-logs"
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
