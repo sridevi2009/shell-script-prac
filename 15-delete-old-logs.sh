@@ -42,3 +42,21 @@ do
 done <<< $FILES_TO_DELETE
 
 
+# delete old logs
+# ===============
+# 1.user has to provide source directory
+# 2.action ---> archieve/delete
+# 3. if he selects archieve --> where is the destination directory
+# 4 time ---> optional, if he gives take it, otherwise 14 days default
+# 5. memory --> optional. if he dont give dont consider, if he gives consider it....
+
+# old-logs.sh -s <source-dir> -a <archieve/delete> -d <destination-dir> -t <no-days> -m <memory-in-mb>
+
+# algorithm
+# =========
+# -s,-a,-d ---> check all these inputs, if he dont give tell him the usage...
+# source directory exist or not
+# destination directory exist or not
+
+# -a ---> archieve if he dont give destination dir throw error about destination-dir
+

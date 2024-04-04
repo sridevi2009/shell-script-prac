@@ -1,0 +1,74 @@
+generally we send mail in chrome --->gmail.com ---> compose msg ---> send
+
+now how to send gmail in linux
+
+generally companies use @cognizant.com
+@tcs.com
+
+first lets install thorugh commands in linux
+
+commands
+=======
+1.sudo su - {first take root access}
+
+now install packages
+
+2.yum -y install postfix cyrus-sasl-plain mailx
+
+here postfix --> hit Gmail API
+cyrus-sasl-plain ---> Authentication
+mailx ---> command to send email
+3.systemctl start/restart postfix
+
+4.systemctl enable postfix
+
+5.vim /etc/postfix/main.cf
+
+shift g
+insert
+enter some details
+
+relayhost = [smtp.gmail.com]:587
+smtp_use_tls = yes
+smtp_sasl_auth_enable = yes
+smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd
+smtp_sasl_security_options = noanonymous
+smtp_sasl_tls_security_options = noanonymous
+
+from_address ---> who is sending mail ex(tiruveedulasridevi8247477004@gmail.com)
+to_address ---> who is receiving the mail -->ex{sravsKool@gmail.com}
+
+6.touch /etc/postfix/sasl_passwd
+
+7.vi /etc/postfix/sasl_passwd
+
+8.[smtp.gmail.com]:587 tiruveedulasridevi8247477004:AppPassword{here give shellscript password}
+
+9.postmap /etc/postfix/sasl_passwd 
+
+10.echo "This is a test mail & Date $(date)" | mail -s "message" sravskool.com
+
+
+open gmail of ur accout
+=======================
+gmail
+click on your account icon
+manage on your google account
+security
+two-step-verification
+get started
+continue
+system login password
+continue
+give your mob number
+send
+add verfication code
+next
+turn on
+app passwords {just give any name ex{shellscript} for linux serveer }
+done
+
+
+
+
+

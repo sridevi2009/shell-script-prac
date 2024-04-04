@@ -1,0 +1,27 @@
+crontab is used for scheduling the scripts
+example--> create one directory exampel /tmp/shellscript-logs
+in that directory create some files tih .log or .java 0r .exe ..with some extensions
+
+
+now--crontab-->it indicates minutes hours day week
+ex: * * * * * --->every minute to trigger your shellscript
+    */15 * * * --> every 15mintues to trigger your shellscript
+    * 2 * * * --- every 2 hours
+
+commands:
+----------
+crontab -e (editing the crontab)
+* * * * * sh /home/centos/shellscript/15-delete-old-logs.sh
+:wq!
+-------
+tail -f /var/log/cron --->to gind the cron logs
+
+how touse shell-script as native commands in linux
+---------------------------------------------------
+echo $PATH
+ex: sudo cp 18-greeting.sh /usr/local/bin/greeting
+    sudo chmod +x  /usr/local/bin/greeting
+    cd 
+    cd /tmp
+    greeting
+here concept is u can also write commands in linux by using shellscript    
